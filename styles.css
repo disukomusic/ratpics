@@ -9,7 +9,7 @@
 body {
     font-family: 'Comic Sans MS', cursive, sans-serif;
     background-color: #ffcc66;
-    color: #990000;
+    /*color: #990000; */
     text-align: center;
     line-height: 1.6;
 }
@@ -88,4 +88,53 @@ footer {
     color: #ffcc66;
     text-align: center;
     padding: 1rem 0;
+}
+
+
+img {
+    max-width: 100%;
+    transition: transform 1s, filter 0.3s;
+}
+
+img:hover {
+    transform: scale(5) rotate(360deg);
+    filter: saturate(150%);
+}
+
+* {
+    animation: wiggle 0.3s infinite;
+}
+
+/*@keyframes wiggle {*/
+/*    0%, 100% {*/
+/*        transform: translateY(0);*/
+/*    }*/
+/*    25% {*/
+/*        transform: translateY(-2px);*/
+/*    }*/
+/*    75% {*/
+/*        transform: translateY(2px);*/
+/*    }*/
+/*}*/
+
+/* Strobing rainbow colors for all text */
+@keyframes strobe {
+    0%, 100% {
+        color: red;
+    }
+    16.666% {
+        color: orange;
+    }
+    33.333% {
+        color: yellow;
+    }
+    50% {
+        color: green;
+    }
+    66.666% {
+        color: blue;
+    }
+    83.333% {
+        color: indigo;
+    }
 }
