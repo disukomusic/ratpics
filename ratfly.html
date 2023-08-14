@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>RATS</title>
+    <style>
+        /* Add CSS for the flying rat */
+        .flying-rat {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 2s;
+        }
+		        /* Set a fixed width for the main container */
+        .container {
+            width: 800px; /* Adjust the width as needed */
+            margin: 0 auto; /* Center the container */
+        }
+		
+		body {
+			cursor: url('rat3'), auto;
+		}
+		
+    </style>
+    <script>
+        // JavaScript for flying rat animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const flyingRat = document.querySelector('.flying-rat');
+
+            function randomPosition() {
+                const maxX = window.innerWidth - flyingRat.clientWidth;
+                const maxY = window.innerHeight - flyingRat.clientHeight;
+                const randomX = Math.floor(Math.random() * maxX);
+                const randomY = Math.floor(Math.random() * maxY);
+                return { x: randomX, y: randomY };
+            }
+
+            function flyRat() {
+                const newPosition = randomPosition();
+                flyingRat.style.transform = `translate(${newPosition.x}px, ${newPosition.y}px)`;
+                setTimeout(flyRat, 500); // Change position every 2 seconds
+            }
+
+            flyRat();
+        });
+    </script>
+</head>
+<body>
+<header>
+    <h1>RAT PICS THAT GO HARD!!!!</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">rats</a></li>
+            <li><a href="ratvideo.html">rats?!?/11</a></li>
+            <li><a href="#">they put me in a rubber room</a></li>
+            <li><a href="#">kill yourselfd</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section class="rat-gallery">
+        <h2>Awesome Rat Pictures</h2>
+        <div class="rat-image">
+            <img src="dancerat.gif" class="flying-rat" alt="Cute Rat">
+            <p>Cuteness overload!</p>
+        </div>
+        <div class="rat-image">
+            <img src="dancerat.gif" class="flying-rat" alt="Playful Rat">
+            <p>Having a blast!</p>
+        </div>
+        <div class="rat-image">
+            <img src="dancerat.gif" class="flying-rat" alt="Rat Friends">
+            <p>Best rat buddies!</p>
+        </div>
+        <!-- Add more rat images here -->
+    </section>
+    <img class="flying-rat" src="dancerat.gif" alt="Flying Rat">
+	
+</main>
+<footer>
+    <p>&copy; 2023 RatLovers Inc.</p>
+</footer>
+</body>
+</html>
