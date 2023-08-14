@@ -105,20 +105,7 @@ img:hover {
     animation: wiggle 0.3s infinite;
 }
 
-/*@keyframes wiggle {*/
-/*    0%, 100% {*/
-/*        transform: translateY(0);*/
-/*    }*/
-/*    25% {*/
-/*        transform: translateY(-2px);*/
-/*    }*/
-/*    75% {*/
-/*        transform: translateY(2px);*/
-/*    }*/
-/*}*/
-
-/* Strobing rainbow colors for all text */
-@keyframes strobe {
+@keyframes flashyRainbow {
     0%, 100% {
         color: red;
     }
@@ -137,4 +124,8 @@ img:hover {
     83.333% {
         color: indigo;
     }
+}
+
+body {
+    animation: flashyRainbow 3s infinite;
 }
