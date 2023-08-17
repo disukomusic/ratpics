@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>RATS</title>
+</head>
+<body>
+<header>
+    <h1>RAT PICS THAT GO HARD!!!!</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">rats</a></li>
+            <li><a href="ratvideo.html">rats?!?/11</a></li>
+            <li><a href="ratfly.html">they put me in a rubber room</a></li>
+            <li><a href="#">kill yourselfd</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="free rat">
+        <h2>FREE RATBUCKS</h2>
+        <p>Clicking on a link can unexpectedly lead you to a virtual goldmine of "ratbucks," an intriguing digital currency that seems to be proliferating across the web.
+		These ratbucks, often represented by quirky rodent-themed icons, hold the promise of surprises and rewards. 
+		Much like an online treasure hunt, each click opens the door to a realm of possibilities—whether it's a playful mini-game, a humorous animation, or even a chance to accumulate more ratbucks. 
+		The allure lies in the unpredictability, as every link becomes a doorway to a world where curiosity is rewarded and exploration unveils a myriad of delightful experiences.</p>
+		<button id="showButton">I want free ratbucks</button>
+    </section>
+		
+	<section id="trolled" style="display: none;">
+		<p>You idiot, You absolute bafoon, You’ve made yourself a laughingstock, You uneducated monkey, Your stupidity is mindblowing to me, 
+		I cant believe you just made that statement, You absolute moron, You have acted like a total fool, a total clown, HONK HONK, Yeah thats you. 
+		KILL YOURSELF KILL YOURSELF KILL YOURSELF </p>
+	</section>
+	
+	<section class="jumpscare">
+		<img id="hiddenImage" src="spooky.png" style="display: none;" width="1000", height="1000" margin-left="auto"; margin-right= "auto">
+		<script>
+			
+			document.getElementById("showButton").addEventListener("click", function() {
+				var image = document.getElementById("hiddenImage");
+				var text1 = document.getElementById("free rat");
+				var text2 = document.getElementById("trolled");
+				text1.style.display = "none";
+				text2.style.display = "block";
+				image.style.display = "block";
+			});
+		</script>
+	</section>
+</main>
+
+<footer>
+    <p>&copy; 2023 rats . All rats reserved.</p>
+</footer>
+</body>
+</html>

@@ -106,7 +106,7 @@
 				flyingRat21.style.transform = `translate(${randomPositions20.x}px, ${randomPositions20.y}px)`;
 				setTimeout(flyRat, 500);
             }
-
+		
             flyRat();
         });
     </script>
@@ -159,8 +159,12 @@
 	<img class="flying-rat" src="dancerat.gif" alt="Flying Rat19">
 	<img class="flying-rat" src="dancerat.gif" alt="Flying Rat20">
 	<img class="flying-rat" src="dancerat.gif" alt="Flying Rat21">
-	
 </main>
+<iframe src="pepis.mp3" allow="autoplay" id="audio" hidden ></iframe>
+    <!-- <iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none;"></iframe> -->
+    <audio id="player" autoplay loop controls>
+        <source src="pepis.mp3" type="audio/mp3">
+    </audio>
 <footer>
     <p>&copy; 2023 RatLovers Inc.</p>
 </footer>
