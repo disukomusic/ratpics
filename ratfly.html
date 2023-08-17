@@ -29,19 +29,82 @@
         // JavaScript for flying rat animation
         document.addEventListener('DOMContentLoaded', () => {
             const flyingRat = document.querySelector('.flying-rat');
+			const flyingRat2 = document.querySelectorAll('.flying-rat')[1];
+			const flyingRat3 = document.querySelectorAll('.flying-rat')[2];
+			const flyingRat4 = document.querySelectorAll('.flying-rat')[3];
+			const flyingRat5 = document.querySelectorAll('.flying-rat')[4];
+			const flyingRat6 = document.querySelectorAll('.flying-rat')[5];
+			const flyingRat7 = document.querySelectorAll('.flying-rat')[6];
+			const flyingRat8 = document.querySelectorAll('.flying-rat')[7];
+			const flyingRat9 = document.querySelectorAll('.flying-rat')[8];
+			const flyingRat10 = document.querySelectorAll('.flying-rat')[9];
+			const flyingRat11 = document.querySelectorAll('.flying-rat')[10];
+			const flyingRat12 = document.querySelectorAll('.flying-rat')[11];
+			const flyingRat13 = document.querySelectorAll('.flying-rat')[12];
+			const flyingRat14 = document.querySelectorAll('.flying-rat')[13];
+			const flyingRat15 = document.querySelectorAll('.flying-rat')[14];
+			const flyingRat16 = document.querySelectorAll('.flying-rat')[15];
+			const flyingRat17 = document.querySelectorAll('.flying-rat')[16];
+			const flyingRat18 = document.querySelectorAll('.flying-rat')[17];
+			const flyingRat19 = document.querySelectorAll('.flying-rat')[18];
+			const flyingRat20 = document.querySelectorAll('.flying-rat')[19];
+			const flyingRat21 = document.querySelectorAll('.flying-rat')[20];
+			
 
             function randomPosition() {
-                const maxX = window.innerWidth - flyingRat.clientWidth;
-                const maxY = window.innerHeight - flyingRat.clientHeight;
-                const randomX = Math.floor(Math.random() * maxX);
-                const randomY = Math.floor(Math.random() * maxY);
+                const maxX = window.outerWidth - flyingRat.clientWidth;
+                const maxY = window.outerHeight - flyingRat.clientHeight;
+				const plusOrMinus = Math.round(Math.random())* 2 - 1; 
+                const randomX = Math.floor(Math.random() * maxX) * plusOrMinus;
+                const randomY = Math.floor(Math.random() * maxY) * plusOrMinus;
                 return { x: randomX, y: randomY };
             }
 
             function flyRat() {
-                const newPosition = randomPosition();
-                flyingRat.style.transform = `translate(${newPosition.x}px, ${newPosition.y}px)`;
-                setTimeout(flyRat, 500); // Change position every 2 seconds
+				const randomPositions0 = randomPosition()
+				const randomPositions1 = randomPosition()
+				const randomPositions2 = randomPosition()
+				const randomPositions3 = randomPosition()
+				const randomPositions4 = randomPosition()
+				const randomPositions5 = randomPosition()
+				const randomPositions6 = randomPosition()
+				const randomPositions7 = randomPosition()
+				const randomPositions8 = randomPosition()
+				const randomPositions9 = randomPosition()
+				const randomPositions10 = randomPosition()
+				const randomPositions11 = randomPosition()
+				const randomPositions12 = randomPosition()
+				const randomPositions13 = randomPosition()
+				const randomPositions14 = randomPosition()
+				const randomPositions15 = randomPosition()
+				const randomPositions16 = randomPosition()
+				const randomPositions17 = randomPosition()
+				const randomPositions18 = randomPosition()
+				const randomPositions19 = randomPosition()
+				const randomPositions20 = randomPosition()
+				
+                flyingRat.style.transform = `translate(${randomPositions0.x}px, ${randomPositions0.y}px)`;
+				flyingRat2.style.transform = `translate(${randomPositions1.x}px, ${randomPositions1.y}px)`;
+				flyingRat3.style.transform = `translate(${randomPositions2.x}px, ${randomPositions2.y}px)`;
+				flyingRat4.style.transform = `translate(${randomPositions3.x}px, ${randomPositions3.y}px)`;
+				flyingRat5.style.transform = `translate(${randomPositions4.x}px, ${randomPositions4.y}px)`;
+				flyingRat6.style.transform = `translate(${randomPositions5.x}px, ${randomPositions5.y}px)`;
+				flyingRat7.style.transform = `translate(${randomPositions6.x}px, ${randomPositions6.y}px)`;
+				flyingRat8.style.transform = `translate(${randomPositions7.x}px, ${randomPositions7.y}px)`;
+				flyingRat9.style.transform = `translate(${randomPositions8.x}px, ${randomPositions8.y}px)`;
+				flyingRat10.style.transform = `translate(${randomPositions9.x}px, ${randomPositions9.y}px)`;
+				flyingRat11.style.transform = `translate(${randomPositions10.x}px, ${randomPositions10.y}px)`;
+				flyingRat12.style.transform = `translate(${randomPositions11.x}px, ${randomPositions11.y}px)`;
+				flyingRat13.style.transform = `translate(${randomPositions12.x}px, ${randomPositions12.y}px)`;
+				flyingRat14.style.transform = `translate(${randomPositions13.x}px, ${randomPositions13.y}px)`;
+				flyingRat15.style.transform = `translate(${randomPositions14.x}px, ${randomPositions14.y}px)`;
+				flyingRat16.style.transform = `translate(${randomPositions15.x}px, ${randomPositions15.y}px)`;
+				flyingRat17.style.transform = `translate(${randomPositions16.x}px, ${randomPositions16.y}px)`;
+				flyingRat18.style.transform = `translate(${randomPositions17.x}px, ${randomPositions17.y}px)`;
+				flyingRat19.style.transform = `translate(${randomPositions18.x}px, ${randomPositions18.y}px)`;
+				flyingRat20.style.transform = `translate(${randomPositions19.x}px, ${randomPositions19.y}px)`;
+				flyingRat21.style.transform = `translate(${randomPositions20.x}px, ${randomPositions20.y}px)`;
+				setTimeout(flyRat, 500);
             }
 
             flyRat();
@@ -79,6 +142,23 @@
         <!-- Add more rat images here -->
     </section>
     <img class="flying-rat" src="dancerat.gif" alt="Flying Rat">
+	<img class="flying-rat" src="dancerat.gif" alt="Flying Rat5">
+	<img class="flying-rat" src="dancerat.gif" alt="Flying Rat6">
+	<img class="flying-rat" src="dancerat.gif" alt="Flying Rat7">
+	<img class="flying-rat" src="dancerat.gif" alt="Flying Rat8">
+	<img class="flying-rat" src="dancerat.gif" alt="Flying Rat9">
+	<img class="flying-rat" src="dancerat.gif" alt="Flying Rat10">
+	<img class="flying-rat" src="dancerat.gif" alt="Flying Rat11">
+	<img class="flying-rat" src="dancerat.gif" alt="Flying Rat12">
+	<img class="flying-rat" src="dancerat.gif" alt="Flying Rat13">
+	<img class="flying-rat" src="dancerat.gif" alt="Flying Rat14">
+	<img class="flying-rat" src="dancerat.gif" alt="Flying Rat15">
+	<img class="flying-rat" src="dancerat.gif" alt="Flying Rat16">
+	<img class="flying-rat" src="dancerat.gif" alt="Flying Rat17">
+	<img class="flying-rat" src="dancerat.gif" alt="Flying Rat18">
+	<img class="flying-rat" src="dancerat.gif" alt="Flying Rat19">
+	<img class="flying-rat" src="dancerat.gif" alt="Flying Rat20">
+	<img class="flying-rat" src="dancerat.gif" alt="Flying Rat21">
 	
 </main>
 <footer>
