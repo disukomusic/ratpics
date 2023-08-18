@@ -1,0 +1,164 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Body */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #ffcc66;
+    text-align: center;
+    line-height: 1.6;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+/* styles.css */
+
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.user {
+    position: absolute;
+}
+
+.rat-icon {
+    width: 50px;
+    height: 50px;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+
+/* Header */
+header {
+    background-color: #663399;
+    color: #ffcc66;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+nav a {
+    color: #ffcc66;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #663399;
+}
+
+/* Main Content */
+main {
+    padding: 2rem;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #663399;
+    color: #ffcc66;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ffcc66;
+}
+
+.gallery {
+    text-align: center;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.image-grid img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: #663399;
+    color: #ffcc66;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+
+
+@keyframes flashyRainbow {
+    0%, 100% {
+        color: red;
+    }
+    16.666% {
+        color: orange;
+    }
+    33.333% {
+        color: yellow;
+    }
+    50% {
+        color: green;
+    }
+    66.666% {
+        color: blue;
+    }
+    83.333% {
+        color: indigo;
+    }
+}
+
+body {
+    animation: flashyRainbow 3s infinite;
+}
+
+
+.rat-pointer {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-size: contain; /* Adjust to your preference */
+  pointer-events: none;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 20px; /* Adjust the tooltip position */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 10px;
+}

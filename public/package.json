@@ -1,0 +1,20 @@
+{
+  "name": "ratserver",
+  "version": "1.0.0",
+  "description": "rat server!!",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "rats"
+  ],
+  "author": "disuko and blazy09 and chatgpt",
+  "license": "UNLICENSED"
+}
