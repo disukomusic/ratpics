@@ -1,12 +1,14 @@
 const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
+const path = require('path'); // Import the 'path' module
 
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
-app.use(express.static(__dirname + '/public'));
+// Serve static files from the root directory
+app.use(express.static(__dirname));
 
 const userDisplayNames = {};
 const userList = [];

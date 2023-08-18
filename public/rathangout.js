@@ -1,9 +1,5 @@
-// rathangout.js
-const socket = io(window.location.origin);
-const userDisplayNames = {};
 const socket = io('https://quality-mint-snapper.ngrok-free.app');
-
-
+const userDisplayNames = {};
 
 document.addEventListener('DOMContentLoaded', () => {
   const ratImage = new Image();
