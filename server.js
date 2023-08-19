@@ -16,10 +16,11 @@ const userDisplayNames = {};
 const userList = [];
 
 io.on('connection', (socket) => {
-	console.log('connected rat!!11', socket.id);
     socket.on('setDisplayName', (displayName) => {
         userDisplayNames[socket.id] = displayName;
         updateUserList();
+        const joinMessage = `${displayName} has epic jo1ned rat chat YEAHHHHH, ${displayName}!`;
+        socket.emit('chatMessage', { user: 'Rat System', message: joinMessage });
     });
 
     socket.on('mouseMove', (data) => {
@@ -27,14 +28,18 @@ io.on('connection', (socket) => {
     });
 
     socket.on('disconnect', () => {
-        delete userDisplayNames[socket.id];
-        updateUserList();
-		console.log('rat is dead he died the', socket.id);
-        io.emit('userDisconnected', socket.id);
+        const disconnectedUserDisplayName = userDisplayNames[socket.id];
+        if (disconnectedUserDisplayName) {
+            io.emit('userDisconnectMessage', disconnectedUserDisplayName);
+            delete userDisplayNames[socket.id];
+            updateUserList();
+            io.emit('userDisconnected', socket.id);
+            console.log('rat is dead he died the', socket.id);
+        }
     });
 
     socket.on('chatMessage', (message) => {
-        const displayName = userDisplayNames[socket.id] || 'Anonymous';
+        const displayName = userDisplayNames[socket.id] || 'anon rat';
         const chatMessage = { user: displayName, message };
 		console.log(chatMessage)
         io.emit('chatMessage', chatMessage);
@@ -48,5 +53,5 @@ function updateUserList() {
 
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`RAT SERVER IS OPEN UNLEASH THE RATS ON PORT ${PORT}`);
 });
