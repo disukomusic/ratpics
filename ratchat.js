@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('displayName', userInput); // Store display name
             userDisplayNames[socket.id] = userInput;
             socket.emit('setDisplayName', userInput);
+			
+			 const welcomeMessage = `Welcome to the rat chat, ${userInput}!!! Oh boy! I love rats!`;
+            socket.emit('chatMessage', welcomeMessage);
         }
     } else {
         userDisplayNames[socket.id] = displayName;
@@ -24,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function addMessage(user, message) {
         const messageElement = document.createElement('div');
-        const fullMessage = `${user}: ${message}`;
+        const fullMessage = `${user} the rat says: ${message}`;
         messageElement.textContent = fullMessage;
         chatMessages.appendChild(messageElement);
         console.log(fullMessage);
