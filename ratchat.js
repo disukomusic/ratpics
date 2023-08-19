@@ -5,7 +5,9 @@ const userDisplayNames = {};
 
 document.addEventListener('DOMContentLoaded', () => {
     const displayName = localStorage.getItem('displayName'); // Retrieve display name from local storage
-
+    const welcomeMessage = `welcome to the rat hangout! ioh boY! i lvoe rats!`;
+            socket.emit('chatMessage', welcomeMessage);
+			
     if (!displayName) {
         const userInput = prompt('RAT NAME RAT NAME (you can only choose one rat name and it is yours forver)');
         if (userInput) {
