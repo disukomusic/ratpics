@@ -28,12 +28,15 @@ io.on('connection', (socket) => {
 
     if (message.startsWith('/nick ')) {
         const newDisplayName = message.slice(6).trim();
+		console.log(newDisplayName, 'has changed their name')
+
         if (newDisplayName) {
             const oldDisplayName = displayName;
             userDisplayNames[socket.id] = newDisplayName;
+			const nameChangeMessage = `${oldDisplayName} BECOMES ${newDisplayName}`;
+			 io.emit('chatMessage', { user: '<RAT SYSTEM>', message: nameChangeMessage });
+			console.log('${oldDisplayName} BECOMES ${newDisplayName}');
             updateUserList();
-            const nameChangeMessage = `${oldDisplayName} BECOMES ${newDisplayName}`;
-            io.emit('chatMessage', { user: '<RAT SYSTEM>', message: nameChangeMessage });
         }
     } else {
         const chatMessage = { user: displayName, message };
