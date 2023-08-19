@@ -20,7 +20,13 @@ html {
 }
 body {
     min-height: 100%;
+	background-image: url('rat1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
 }
+
 body {
     margin: 0;
     padding: 0;
