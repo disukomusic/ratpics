@@ -42,6 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
             chatInput.value = '';
         }
     });
+	
+	    chatInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            if (chatInput.value.trim() !== '') {
+            const message = chatInput.value.trim();
+            socket.emit('chatMessage', message);
+            chatInput.value = '';
+        }// Call the sendMessage function
+        }
+    });
 
     socket.on('chatMessage', (data) => {
         const { user, message } = data;

@@ -8,36 +8,112 @@
 /* Body */
 body {
     font-family: 'Comic Sans MS', cursive, sans-serif;
-    background-color: #ffcc66;
-    /*color: #990000; */
+    background-image: url('https://opengameart.org/sites/default/files/oga-textures/125660/grass%2018%20-%20256x256.png');
+    background-repeat: repeat;
     text-align: center;
     line-height: 1.6;
-	cursor: url('rat3.png'), auto;
-
+    cursor: url('rat3.png'), auto;
+    animation: rainbowTextCycle 2s infinite;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff; /* Use #ffffff for white color */
 }
-
 
 /* Header */
 header {
-    background-color: #663399;
+    background-color: #993399; /* Use a nice purple color code */
     color: #ffcc66;
     text-align: center;
     padding: 1rem 0;
 }
 
-nav ul {
-    list-style: none;
+h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    animation: neonGlow 1.5s alternate infinite;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
 }
 
+
+.quick-shake:hover {
+    animation: quickShake 0.1s infinite;
+}
+
+@keyframes quickShake {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25%, 75% {
+        transform: translate(-5px, -5px);
+    }
+    50% {
+        transform: translate(5px, 5px);
+    }
+    37.5% {
+        transform: translate(-5px, 5px);
+    }
+    62.5% {
+        transform: translate(5px, -5px);
+    }
+}
+@keyframes rainbowTextCycle {
+    0%, 100% {
+        color: red;
+    }
+    12.5% {
+        color: orange;
+    }
+    25% {
+        color: yellow;
+    }
+    37.5% {
+        color: green;
+    }
+    50% {
+        color: blue;
+    }
+    62.5% {
+        color: indigo;
+    }
+    75% {
+        color: violet;
+    }
+    87.5% {
+        color: red;
+    }
+}
+@keyframes rotateColors {
+    0% {
+        background-color: #663399;
+        color: #ffcc66;
+    }
+    25% {
+        background-color: #ffcc66;
+        color: #663399;
+    }
+    50% {
+        background-color: #99cc00;
+        color: #990000;
+    }
+    75% {
+        background-color: #990000;
+        color: #99cc00;
+    }
+    100% {
+        background-color: #ffcc66;
+        color: #663399;
+    }
+}
+
+
 nav li {
-    display: inline;
+    display: inline-block;
     margin-right: 1rem;
 }
 
 nav a {
     color: #ffcc66;
     text-decoration: none;
-    transition: color 0.3s;
+	
 }
 
 nav a:hover {
@@ -52,6 +128,28 @@ main {
 .intro {
     text-align: center;
     margin-bottom: 2rem;
+    animation: rainbowText 5s infinite;
+}
+
+@keyframes rainbowText {
+    0% {
+        color: red;
+    }
+    20% {
+        color: orange;
+    }
+    40% {
+        color: yellow;
+    }
+    60% {
+        color: green;
+    }
+    80% {
+        color: blue;
+    }
+    100% {
+        color: indigo;
+    }
 }
 
 .btn {
@@ -62,6 +160,19 @@ main {
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s;
+    animation: spin 3s infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .btn:hover {
@@ -83,7 +194,17 @@ main {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
+    animation: bounce 1s infinite;
 }
+
+/* @keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+} */
 
 /* Footer */
 footer {
@@ -91,8 +212,31 @@ footer {
     color: #ffcc66;
     text-align: center;
     padding: 1rem 0;
+    animation: rainbowFooter 5s infinite;
 }
 
+@keyframes rainbowFooter {
+    0% {
+        background-color: #663399;
+        color: #ffcc66;
+    }
+    25% {
+        background-color: #ffcc66;
+        color: #663399;
+    }
+    50% {
+        background-color: #99cc00;
+        color: #990000;
+    }
+    75% {
+        background-color: #990000;
+        color: #99cc00;
+    }
+    100% {
+        background-color: #ffcc66;
+        color: #663399;
+    }
+}
 
 img {
     max-width: 100%;
@@ -104,31 +248,17 @@ img:hover {
     filter: saturate(150%);
 }
 
-* {
-    animation: wiggle 0.3s infinite;
-}
-
-@keyframes flashyRainbow {
+@keyframes wiggle {
     0%, 100% {
-        color: red;
+        transform: rotate(0deg);
     }
-    16.666% {
-        color: orange;
-    }
-    33.333% {
-        color: yellow;
+    25% {
+        transform: rotate(-5deg);
     }
     50% {
-        color: green;
+        transform: rotate(5deg);
     }
-    66.666% {
-        color: blue;
+    75% {
+        transform: rotate(-5deg);
     }
-    83.333% {
-        color: indigo;
-    }
-}
-
-body {
-    animation: flashyRainbow 3s infinite;
 }
