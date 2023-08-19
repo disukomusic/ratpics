@@ -16,12 +16,30 @@ const userDisplayNames = {};
 const userList = [];
 
 io.on('connection', (socket) => {
-    socket.on('setDisplayName', (displayName) => {
+     socket.on('setDisplayName', (displayName) => {
         userDisplayNames[socket.id] = displayName;
         updateUserList();
-        const joinMessage = `${displayName} has epic jo1ned rat chat YEAHHHHH, ${displayName}!`;
-        socket.emit('chatMessage', { user: 'Rat System', message: joinMessage });
+        const welcomeMessage = `welcome to the rat chat, ${displayName}!!! ioh boY! i lvoe rats!`;
+        socket.emit('chatMessage', { user: 'RAT SYSTEM', message: welcomeMessage });
     });
+
+    socket.on('chatMessage', (message) => {
+    const displayName = userDisplayNames[socket.id] || 'anon rat';
+
+    if (message.startsWith('/nick ')) {
+        const newDisplayName = message.slice(6).trim();
+        if (newDisplayName) {
+            const oldDisplayName = displayName;
+            userDisplayNames[socket.id] = newDisplayName;
+            updateUserList();
+            const nameChangeMessage = `${oldDisplayName} BECOMES ${newDisplayName}`;
+            io.emit('chatMessage', { user: 'RAT SYSTEM', message: nameChangeMessage });
+        }
+    } else {
+        const chatMessage = { user: displayName, message };
+        io.emit('chatMessage', chatMessage);
+    }
+});
 
     socket.on('mouseMove', (data) => {
         io.emit('userMouseMove', { clientId: socket.id, x: data.x, y: data.y });
@@ -36,13 +54,6 @@ io.on('connection', (socket) => {
             io.emit('userDisconnected', socket.id);
             console.log('rat is dead he died the', socket.id);
         }
-    });
-
-    socket.on('chatMessage', (message) => {
-        const displayName = userDisplayNames[socket.id] || 'anon rat';
-        const chatMessage = { user: displayName, message };
-		console.log(chatMessage)
-        io.emit('chatMessage', chatMessage);
     });
 });
 

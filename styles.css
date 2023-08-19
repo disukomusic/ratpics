@@ -262,3 +262,24 @@ img:hover {
         transform: rotate(-5deg);
     }
 }
+
+#chat-container {
+    text-align: left;
+    margin-left: 10px;
+    background-color: white; /* Add a white background */
+    padding: 10px; /* Add some padding for spacing */
+}
+
+#chat-messages {
+    text-align: left;
+}
+
+#chat-input-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px; /* Add some top margin for spacing */
+}
+
+#chat-input {
+    flex: 1;
+}
