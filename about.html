@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐀 Rat Kingdom Geocities 🐀</title>
+    <style>
+        body {
+            background: repeating-linear-gradient(45deg, #FF00FF, #FFFF00, #00FF00, #00FFFF, #FF00FF);
+            font-family: "Comic Sans MS", cursive;
+            margin: 0;
+            padding: 0;
+            animation: background-slide 10s linear infinite;
+        }
+
+        @keyframes background-slide {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
+        }
+
+        #header {
+            background: repeating-linear-gradient(45deg, #FF9900, #FF9900 20px, #FFFF00 20px, #FFFF00 40px);
+            text-align: center;
+            padding: 20px;
+            border: 5px dashed #FF00FF;
+            animation: border-blink 2s infinite;
+        }
+
+        @keyframes border-blink {
+            0% { border-color: #FF00FF; }
+            50% { border-color: #00FF00; }
+            100% { border-color: #FFFF00; }
+        }
+
+        #main-content {
+            margin: 20px;
+            padding: 10px;
+            background: repeating-radial-gradient(circle, #00FF00, #00FF00 20px, #FFFF00 20px, #FFFF00 40px);
+            border: 5px double #FF9900;
+            animation: border-jump 3s linear infinite alternate;
+        }
+
+        @keyframes border-jump {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(15px); }
+        }
+
+        #main-content h2 {
+            color: #FF00FF;
+            text-decoration: underline;
+            animation: text-flash 1.5s alternate infinite;
+        }
+
+        @keyframes text-flash {
+            0% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        #main-content p {
+            font-size: 18px;
+            color: #00FFFF;
+            animation: text-blink 1.5s alternate infinite;
+        }
+
+        @keyframes text-blink {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        #sidebar {
+            float: right;
+            width: 30%;
+            margin: 20px;
+            padding: 10px;
+            background: repeating-linear-gradient(45deg, #FFFF00, #FFFF00 20px, #FF9900 20px, #FF9900 40px);
+            border: 5px dashed #FF00FF;
+            animation: border-shake 2s ease-in-out infinite;
+        }
+
+        @keyframes border-shake {
+            0%, 100% { transform: translateX(0); }
+            25%, 75% { transform: translateX(10px); }
+            50% { transform: translateX(-10px); }
+        }
+
+        #sidebar h2 {
+            color: #FF00FF;
+            text-decoration: underline;
+            animation: text-zoom 2s alternate infinite;
+        }
+
+        @keyframes text-zoom {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        #footer {
+            clear: both;
+            text-align: center;
+            background: repeating-radial-gradient(circle, #FF00FF, #FF00FF 20px, #00FFFF 20px, #00FFFF 40px);
+            padding: 10px;
+            border-top: 5px double #FFFF00;
+            animation: footer-pulse 2s alternate infinite;
+        }
+
+        @keyframes footer-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        #footer p {
+            font-size: 14px;
+            color: #FFFF00;
+        }
+
+        .rat-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px;
+            padding: 10px;
+            background-color: #FFCC99;
+            border: 5px dashed #FF9900;
+            animation: rat-bounce 4s ease-in-out infinite;
+        }
+
+        @keyframes rat-bounce {
+            0%, 100% { transform: translateY(0); }
+            25%, 75% { transform: translateY(-10px); }
+            50% { transform: translateY(10px); }
+        }
+
+        .rat-image {
+            max-width: 150px;
+            animation: rat-spin 2s linear infinite;
+        }
+
+        @keyframes rat-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>🐀 Ratopia: A Kingdom of Rats 🐀</h1>
+        <p>🐾 Unite with the Ratizens in the Furry Adventure of a Lifetime! 🐾</p>
+    </div>
+
+    <div id="main-content">
+        <h2>🧀 The Rodent Revolution: Cheddar Dreams 🧀</h2>
+        <p>🐁 Greetings, fellow rat enthusiast! I'm the Ratmaster of HTML and CSS magic, conjuring rat-tastic creations that will whisker you away to a digital haven of rodent revelry. Grab your cheesy snacks and let's explore the world of rats!</p>
+    </div>
+
+    <div id="sidebar">
+        <h2>🐾 Ratventure Awaits 🐾</h2>
+        <ul>
+            <li><a href="index.html" style="color: #FF00FF; text-decoration: underline;">🧀 Ratopia Chronicles</a></li>
+            <li><a href="ratvideo.html" style="color: #FFFF00; text-decoration: line-through;">🏰 Ratopia Castle</a></li>
+            <li><a href="hangout.html" style="color: #00FFFF; font-weight: bold;">🐁 Ratizens' Guild</a></li>
+        </ul>
+    </div>
+
+    <div class="rat-container">
+        <img class="rat-image" src="funnyrat.png" alt="Cute Rat">
+        <img class="rat-image" src="funnyrat.png" alt="Adorable Rat">
+        <img class="rat-image" src="funnyrat.png" alt="Rat Art">
+    </div>
+
+    <!-- Repeat the rat-container section several times to make the page longer -->
+
+    <div id="footer">
+        <p>🐀 &copy; 2023 RatopiaRealms. All Rights Raterved! 🧀</p>
+    </div>
+</body>
+</html>
