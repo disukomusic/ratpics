@@ -20,7 +20,7 @@ io.on('connection', (socket) => {
         userDisplayNames[socket.id] = displayName;
         updateUserList();
         const welcomeMessage = `welcome to the rat chat, ${displayName}!!! ioh boY! i lvoe rats!`;
-        socket.emit('chatMessage', { user: 'RAT SYSTEM', message: welcomeMessage });
+        socket.emit('chatMessage', { user: '<RAT SYSTEM>', message: welcomeMessage });
     });
 
     socket.on('chatMessage', (message) => {
@@ -33,7 +33,7 @@ io.on('connection', (socket) => {
             userDisplayNames[socket.id] = newDisplayName;
             updateUserList();
             const nameChangeMessage = `${oldDisplayName} BECOMES ${newDisplayName}`;
-            io.emit('chatMessage', { user: 'RAT SYSTEM', message: nameChangeMessage });
+            io.emit('chatMessage', { user: '<RAT SYSTEM>', message: nameChangeMessage });
         }
     } else {
         const chatMessage = { user: displayName, message };

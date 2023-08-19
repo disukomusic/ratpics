@@ -71,7 +71,7 @@ socket.on('chatMessage', (data) => {
 });
 
 socket.on('userDisconnectMessage', (disconnectedUserDisplayName) => {
-    addMessage('RAT SYSTEM', `${disconnectedUserDisplayName} has been rat smited!! he is dead forevery!!11`);
+    addMessage('<RAT SYSTEM>', `${disconnectedUserDisplayName} has been rat smited!! he is dead forevery!!11`);
 });
 
 
