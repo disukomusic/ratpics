@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const displayName = localStorage.getItem('displayName'); // Retrieve display name from local storage
 
     if (!displayName) {
-        const userInput = prompt('Enter your display name:');
+        const userInput = prompt('RAT NAME RAT NAME (you can only choose one rat name and it is yours forver)');
         if (userInput) {
             localStorage.setItem('displayName', userInput); // Store display name
             userDisplayNames[socket.id] = userInput;
