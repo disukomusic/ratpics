@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             userDisplayNames[socket.id] = userInput;
             socket.emit('setDisplayName', userInput);
 			
-			 const welcomeMessage = `welcome to the rat chat, ${userInput}!!! ioh boY! i lvoe rats!`;
+			 const welcomeMessage = `Welcome to the rat chat, ${userInput}!!! Oh boy! I love rats!`;
             socket.emit('chatMessage', welcomeMessage);
         }
     } else {
