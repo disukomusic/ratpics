@@ -40,6 +40,7 @@ io.on('connection', (socket) => {
         }
     } else {
         const chatMessage = { user: displayName, message };
+		console.log('<', displayName, '>',  message);
         io.emit('chatMessage', chatMessage);
     }
 });

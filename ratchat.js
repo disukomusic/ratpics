@@ -12,11 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('displayName', userInput);
             userDisplayNames[socket.id] = userInput;
             socket.emit('setDisplayName', userInput);
-
         }
     } else {
         userDisplayNames[socket.id] = displayName;
-        socket.emit('setDisplayName', displayName); // Place it here
+        socket.emit('setDisplayName', displayName);
     }
 
     const chatInput = document.getElementById('chat-input');
