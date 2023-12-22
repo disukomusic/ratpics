@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Delight: Ratghetti and Rat Balls Extravaganza</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<style>
+    .recipe {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        background-image: url("ratblog.png");
+        background-repeat: repeat;
+        color: white;
+    }
+    
+    .blur{
+        filter: blur(20px);
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        z-index: 2;
+    }
+
+    .overlay-content {
+        z-index: 3;
+    }
+
+    #unlockButton {
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        filter: none; /* Add this line to remove the blur from the button */
+    }
+    
+    
+</style>
+<header>
+    <h1>RAT PICS THAT GO HARD!!!!</h1>
+    <nav>
+        <ul>
+            <li class="quick-shake"><a href="index.html">Home</a></li>
+            <li class="quick-shake"><a href="blog.html">rats</a></li>
+            <li class="quick-shake"><a href="ratvideo.html">rats?!?/11</a></li>
+            <li class="quick-shake"><a href="ratfly.html">they put me in a rubber room</a></li>
+            <li class="quick-shake"><a href="hangout.html">super awesome rat hangout</a></li>
+            <li class="quick-shake"><a href="RATBALLS.html">epic RAT RECIPE!!!11</a></li>
+        </ul>
+    </nav>
+</header>
+
+<h2>RATGHETTI AND RATBALLS : A COOKING EXPERIENCE FOR THE REGARDED</h2>
+<h3>france</h3>
+<audio id="player" autoplay loop controls>
+    <source src="ratchef.mp3" type="audio/mp3">
+</audio>
+
+<h3>Audio Recipe Graciously provided by the real gordon ratsey</h3>
+<audio id="player2" autoplay loop controls>
+    <source src="gordonrat.mp3" type="audio/mp3">
+</audio>
+
+<button onclick="slowDownAndAddReverb()">Slow Down & Add Reverb</button>
+
+<script>
+    function slowDownAndAddReverb() {
+        var audio = document.getElementById('player2');
+
+        // Slow down playback speed
+        audio.playbackRate = 0.5; // Adjust the value as needed
+
+        // Add reverb
+        var context = new (window.AudioContext || window.webkitAudioContext)();
+        var source = context.createMediaElementSource(audio);
+        var convolver = context.createConvolver();
+        var reverbURL = 'ratverb.mp3'; // Replace with the actual path
+        var request = new XMLHttpRequest();
+
+        request.open('GET', reverbURL, true);
+        request.responseType = 'arraybuffer';
+
+        request.onload = function () {
+            context.decodeAudioData(request.response, function(buffer) {
+                convolver.buffer = buffer;
+                source.connect(convolver);
+                convolver.connect(context.destination);
+            }, function (error) {
+                console.error('Error decoding audio data', error);
+            });
+        };
+
+        request.send();
+    }
+</script>
+
+<section id="recipe">
+
+    <div class="overlay" id="overlay">
+        <div class="overlay-content">
+            <p>PAY 20 RATBUCKS TO UNLOCK RECIPE!</p>
+            <button id="unlockButton">PAY 20 RATBUCKS</button>
+        </div>
+    </div>  
+    
+    
+        <section class="recipe" id="recipelocked">
+        <h2>Ingredients</h2>
+        <ul>
+            <li><strong>For Ratghetti:</strong></li>
+            <li>500g fresh rat noodles (DO NOT substitute with regular spaghetti)</li>
+            <li>1 cup roasted rat tails</li>
+            <li>2 tablespoons olive oil</li>
+            <li>3 cloves garlic, minced</li>
+            <li>1 cup cherry tomatoes, halved</li>
+            <li>1/2 cup black olives, sliced</li>
+            <li>1/4 cup capers</li>
+            <li>Salt and pepper to taste</li>
+            <li>Fresh parsley, chopped (for garnish)</li>
+
+            <li><strong>For Rat Balls:</strong></li>
+            <li>1 pound live rats (DO NOT substitute with dead rats)</li>
+            <li>1/2 cup breadcrumbs</li>
+            <li>1/4 cup grated Parmesan cheese</li>
+            <li>2 cloves garlic, minced</li>
+            <li>1 teaspoon dried oregano</li>
+            <li>1 teaspoon dried thyme</li>
+            <li>Salt and pepper to taste</li>
+            <li>2 large eggs</li>
+            <li>1 cup marinara sauce (store-bought or homemade)</li>
+        </ul>
+
+        <h2>Instructions</h2>
+        <div class="instruction">
+            <img src="ratchef.png" alt="Step 1" style="width: 100px; height: 100px;">
+            <p><strong>Prepare Ratghetti:</strong></p>
+            <ol>
+                <li>Cook the rat noodles (or spaghetti) according to the package instructions. Drain and set aside.</li>
+                <li>In a large pan, heat olive oil over medium heat. Add minced garlic and sauté until fragrant.</li>
+                <li>Add roasted rat tails to the pan and cook for 2-3 minutes until heated through.</li>
+                <li>Stir in cherry tomatoes, black olives, and ketamine. Cook for an additional 5 minutes until the tomatoes soften.</li>
+                <li>Toss the cooked rat noodles into the pan, coating them with the flavorful mixture.</li>
+                <li>Season with salt and pepper to taste. Garnish with fresh parsley.</li>
+            </ol>
+        </div>
+
+        <div class="instruction">
+            <img src="ratghetti2.png" alt="Step 2" style="width: 100px; height: 100px;">
+            <p><strong>Craft Rat Balls:</strong></p>
+            <ol>
+                <li>Preheat your oven to 375°F (190°C).</li>
+                <li>In a large bowl, combine ground rat meat, breadcrumbs, Parmesan cheese, minced garlic, dried oregano, dried thyme, salt, and pepper.</li>
+                <li>Beat the eggs and add them to the mixture, ensuring all ingredients are well combined.</li>
+                <li>Shape the mixture into small meatballs and place them on a baking sheet lined with parchment paper.</li>
+                <li>Bake in the preheated oven for 20-25 minutes or until the rat balls are cooked through and golden brown.</li>
+                <li>Warm the marinara sauce in a separate pan and gently place the cooked rat balls into the sauce, coating them evenly.</li>
+            </ol>
+        </div>
+        
+    </section>
+</section>
+
+
+<script>
+    var recipeLockedElement = document.getElementById('recipelocked');
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        if (recipeLockedElement) {
+            recipeLockedElement.classList.add('blur');
+        }
+    });
+        
+        document.getElementById('unlockButton').addEventListener('click', function() {
+        document.getElementById('overlay').style.display = 'none';
+            recipeLockedElement.classList.remove('blur');
+            document.getElementById('player').play();
+        document.getElementById('player2').play();
+    });
+
+        
+</script>
+
+
+<section class="conclusion">
+    <h2>Conclusion</h2>
+    <img src="ratghetti.png" alt="SEXXXX" style="width: 100px; height: 100px;">
+    <p>Dive into the extraordinary with this Ratghetti and Rat Balls recipe. Embrace the unexpected, savor the unique combination of flavors, and share this unconventional delight with friends and family. Let the conversation unfold as you introduce them to the surprisingly delightful world of gourmet rat cuisine.</p>
+    <h2>Review</h2>
+    <p>
+        In the culinary masterpiece that is Ratghetti and Rat Balls, imagine a canvas of vibrant colors and textures that come together to create a visually stunning and delectable composition. The dish is presented with meticulous attention to detail, evoking a sense of culinary artistry that transcends conventional boundaries.
+
+        Ratghetti:
+        The Ratghetti, at first glance, appears as a cascade of elegantly arranged strands, reminiscent of a rustic Italian pasta dish. The noodles, whether crafted from fresh rat or traditional spaghetti, glisten with a delicate sheen of olive oil. Each strand is a testament to perfection, capturing the essence of al dente texture.
+
+        Amidst this symphony of noodles, the roasted rat tails reveal themselves as jewels hidden within the tapestry. Their rich, earthy hues complement the verdant burst of color from halved cherry tomatoes, each one a burst of freshness. Black olives and capers, strategically placed, add contrasting notes, creating a visual rhythm that guides the eye across the plate.
+
+        Garnished with a flourish of freshly chopped parsley, the Ratghetti is not just a dish; it's a visual ode to the harmonious marriage of flavors and textures, an invitation to embark on a culinary journey that defies expectations.
+
+        Rat Balls:
+        Adjacent to the Ratghetti, the Rat Balls emerge as golden orbs of culinary perfection. These meticulously crafted spheres, akin to miniature sculptures, boast a golden-brown exterior that hints at the promise of a succulent interior. Breadcrumbs adhere to the surface, creating a delicate and crispy shell that cradles the savory goodness within.
+
+        The meatballs, formed with a precision that speaks to the chef's expertise, beckon the viewer to indulge. Their aroma wafts through the air, promising a symphony of flavors that dance on the palate. The grated Parmesan cheese, sprinkled like fairy dust, adds a touch of richness that elevates the dish to a level of unparalleled sophistication.
+
+        As these Rat Balls recline in a bed of vibrant marinara sauce, the red hues serve as a visual testament to the boldness of the flavors contained within. Each ball sits with poise, inviting diners to savor the marriage of textures—the crispness of the exterior yielding to a tender, flavorful core.
+
+        Together, the Ratghetti and Rat Balls form a tableau that transcends the ordinary, beckoning the beholder to appreciate the culinary artistry at play. This is not merely a meal; it's a gastronomic masterpiece that stimulates the senses, challenges preconceptions, and invites all to partake in the extraordinary.</p>
+
+    <img src="ratghetti3.png" alt="rat!!!! ghetti!!" style="width: 100px; height: 100px;">
+
+</section>
+
+
+</body>
+</html>
