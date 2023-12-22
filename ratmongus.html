@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>RATS</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .bullet {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 100px;
+            width: 100px;
+        }
+        
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>RAT PICS THAT GO HARD!!!!</h1>
+    <nav>
+        <ul>
+            <li class="quick-shake"><a href="index.html">Home</a></li>
+            <li class="quick-shake"><a href="blog.html">rats</a></li>
+            <li class="quick-shake"><a href="ratvideo.html">rats?!?/11</a></li>
+            <li class="quick-shake"><a href="ratfly.html">they put me in a rubber room</a></li>
+            <li class="quick-shake"><a href="hangout.html">super awesome rat hangout</a></li>
+            <li class="quick-shake"><a href="RATBALLS.html">epic RAT RECIPE!!!11</a></li>
+        </ul>
+    </nav>
+</header>
+<audio autoplay loop>
+    <source src="ratdance.mp3" type="audio/mp3">
+    Your browser does not support the audio tag.
+</audio>
+<canvas id="gameCanvas"></canvas>
+<script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const playerImage = new Image();
+    playerImage.src = 'rat2.png';
+
+    const ratImage = new Image();
+    ratImage.src = 'ratnitewall1.png';
+
+    const player = {
+        x: 50,
+        y: 50,
+        speed: 1,
+        acceleration: 0.2,
+        velocity: { x: 0, y: 0 }
+    };
+
+    const keys = {};
+    const rats = []; // Array to store rat positions
+
+    function update() {
+        // Update acceleration based on user input
+        if (keys['ArrowUp']) player.velocity.y -= player.acceleration;
+        if (keys['ArrowDown']) player.velocity.y += player.acceleration;
+        if (keys['ArrowLeft']) player.velocity.x -= player.acceleration;
+        if (keys['ArrowRight']) player.velocity.x += player.acceleration;
+
+        // Update player position based on velocity
+        player.x += player.velocity.x;
+        player.y += player.velocity.y;
+
+        // Damping (slowing down the player when no keys are pressed)
+        player.velocity.x *= 0.9;
+        player.velocity.y *= 0.9;
+    }
+
+    function draw() {
+        // Draw game elements here
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(playerImage, player.x, player.y, 40, 40);
+    }
+
+    function spawnRatAtMousePosition(event) {
+        rats.push({ x: player.x, y: player.y });
+        console.log("spawned rat wall");
+    }
+
+    function despawnRatAtMousePosition(event) {
+        const mouseX = event.clientX;
+        const mouseY = event.clientY;
+
+        // Check if middle button is clicked
+        if (event.button === 1) {
+            // Check if any rat is clicked
+            for (let i = rats.length - 1; i >= 0; i--) {
+                const rat = rats[i];
+                const ratWidth = 40; // Adjust the width as needed
+                const ratHeight = 40; // Adjust the height as needed
+
+                if (
+                    mouseX >= rat.x &&
+                    mouseX <= rat.x + ratWidth &&
+                    mouseY >= rat.y &&
+                    mouseY <= rat.y + ratHeight
+                ) {
+                    rats.splice(i, 1); // Remove the rat
+                    audio.play(); // Play the audio file
+                    console.log("despawned rat wall");
+                    break;
+                }
+            }
+        }
+    }
+    
+    
+    function gameLoop() {
+        update();
+        draw();
+        requestAnimationFrame(gameLoop);
+
+        for (const rat of rats) {
+            ctx.drawImage(ratImage, rat.x, rat.y);
+        }
+            
+    }
+
+    // Keyboard input
+    window.addEventListener('keydown', (e) => {
+        keys[e.key] = true;
+    });
+
+    window.addEventListener('keyup', (e) => {
+        keys[e.key] = false;
+    });
+
+    // Mouse click input
+    window.addEventListener('click', spawnRatAtMousePosition);
+
+    window.addEventListener('mousedown', despawnRatAtMousePosition);
+
+
+    resizeCanvas();
+
+    // Resize canvas when the window is resized
+    window.addEventListener('resize', resizeCanvas);
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+        gameLoop();
+</script>
+
+<script>
+    // Function to create a bullet element with random y-position
+    function createBullet() {
+        const bullet = document.createElement('img');
+        bullet.src = 'bullet.png';
+        bullet.classList.add('bullet');
+        bullet.style.right = '0';
+        bullet.style.top = `${Math.random() * (window.innerHeight - 20)}px`; // Random y-position
+        document.body.appendChild(bullet);
+        return bullet;
+    }
+
+    // Function to animate the bullets
+    function animateBullets() {
+        // Create and position initial bullets
+        const bullets = [];
+
+        // Interval to spawn a new bullet every 1000 milliseconds (1 second)
+        setInterval(() => {
+            const bullet = createBullet();
+            bullets.push(bullet);
+        }, 1000);
+
+        // Animation loop
+        function moveBullets() {
+            bullets.forEach(bullet => {
+                const currentRight = parseFloat(bullet.style.right);
+                const newRight = currentRight + 2; // Adjust speed
+                bullet.style.right = `${newRight}px`;
+
+                // Remove bullets that move off-screen
+                if (newRight > window.innerWidth) {
+                    bullet.remove();
+                    const index = bullets.indexOf(bullet);
+                    bullets.splice(index, 1);
+                }
+            });
+
+            requestAnimationFrame(moveBullets);
+        }
+
+        moveBullets();
+    }
+
+    // Start the animation when the page loads
+    window.onload = animateBullets;
+</script>
+
+
+
+</body>
+</html>
