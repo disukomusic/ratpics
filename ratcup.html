@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>RATS</title>
+	
+</head>
+<body>
+<style>
+    .cup {
+      display: inline-block;
+      margin: 10px;
+      cursor: pointer;
+      width: 200px;
+    }
+    .cup img {
+      width: 100%;
+      height: auto;
+    }
+    #failPopup, #winPopup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 999;
+    }
+</style>
+<header>
+    <h1>RAT PICS THAT GO HARD!!!!</h1>
+    <nav>
+        <ul>
+            <li class="quick-shake"><a href="index.html">Home</a></li>
+            <li class="quick-shake"><a href="blog.html">rats</a></li>
+            <li class="quick-shake"><a href="ratvideo.html">rats?!?/11</a></li>
+            <li class="quick-shake"><a href="ratfly.html">they put me in a rubber room</a></li>
+            <li class="quick-shake"><a href="hangout.html">super awesome rat hangout</a></li>
+            <li class="quick-shake"><a href="RATBALLS.html">epic RAT RECIPE!!!11</a></li>
+            <li class="quick-shake"><a href="ratcup.html">RATS. JUST A CLICK AWAY</a></li>
+        </ul>
+    </nav>
+</header>
+
+<h2>Three Rats Game</h2>
+<p>Try to find the hidden rat!</p>
+<p>Great game for children and rats of all ages. Play now to discovered the magic of burbing rat!</p>
+
+<div id="cup1" class="cup" onclick="revealBall(1)">
+    <img src="ratcup.png" alt="Cup 1">
+  </div>
+  
+  <div id="cup2" class="cup" onclick="revealBall(2)">
+    <img src="ratcup.png" alt="Cup 2">
+  </div>
+  
+  <div id="cup3" class="cup" onclick="revealBall(3)">
+    <img src="ratcup.png" alt="Cup 3">
+  </div>
+
+  <audio id="burpAudio" src="ratburp.mp3"></audio>
+  <audio id="hornAudio" src="rathorn.mp3"></audio>
+
+<div id="failPopup">
+  <img src="ratburp.gif" alt="Rat Burp">
+</div>
+<div id="winPopup">
+  <img src="dancerat.gif" alt="Dance Rat">
+</div>
+
+<script>
+  let ballUnderCup = Math.floor(Math.random() * 3) + 1;
+
+  function revealBall(selectedCup) {
+    if (selectedCup === ballUnderCup) {
+      displayWinPopup();
+      playHornAudio();
+    } else {
+      displayFailPopup();
+      playBurpAudio();
+    }
+    resetGame();
+  }
+
+  function displayFailPopup() {
+    const failPopup = document.getElementById("failPopup");
+    failPopup.style.display = "block";
+    setTimeout(() => {
+      failPopup.style.display = "none";
+    }, 3000); // Adjust the time the popup is displayed (in milliseconds)
+  }
+
+  function displayWinPopup() {
+    const winPopup = document.getElementById("winPopup");
+    winPopup.style.display = "block";
+    setTimeout(() => {
+      winPopup.style.display = "none";
+    }, 5000); // Adjust the time the popup is displayed (in milliseconds)
+  }
+
+  function playBurpAudio() {
+    const burpAudio = document.getElementById("burpAudio");
+    burpAudio.play();
+  }
+
+  function playHornAudio() {
+    const hornAudio = document.getElementById("hornAudio");
+    hornAudio.play();
+  }
+
+  function resetGame() {
+    ballUnderCup = Math.floor(Math.random() * 3) + 1;
+  }
+</script>
+
+</body>
+</html>
