@@ -33,6 +33,10 @@ h1 {
     text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
 }
 
+.banner {
+    background-color: #1dff00;
+}
+
 
 .quick-shake:hover {
     animation: quickShake 0.1s infinite;

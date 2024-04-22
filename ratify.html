@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>RATS</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+            color: #fff;
+            justify-content: center;
+            align-items: center;
+
+            
+            height: 100vh;
+        }
+
+        #playlist {
+            text-align: center;
+            background-color: #282828;
+            padding: 30px;
+            border-radius: 15px;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        .song {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 20px;
+            background-color: #282828;
+            border: 1px solid #333;
+            border-radius: 5px;
+            outline: none;
+            align-items: center;
+        }
+        
+
+        audio {
+            -webkit-appearance: none;
+            margin: 0;
+            width: 100%;
+            height: 30px;
+        }
+
+        audio::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            background-color: #fff;
+            cursor: pointer;
+            margin-top: -6px;
+        }
+
+        audio::-webkit-slider-runnable-track {
+            height: 4px;
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>RAT PICS THAT GO HARD!!!!</h1>
+    <nav>
+        <ul>
+            <li class="quick-shake"><a href="index.html">Home</a></li>
+            <li class="quick-shake"><a href="blog.html">rats</a></li>
+            <li class="quick-shake"><a href="ratvideo.html">rats?!?/11</a></li>
+            <li class="quick-shake"><a href="ratfly.html">they put me in a rubber room</a></li>
+            <li class="quick-shake"><a href="hangout.html">super awesome rat hangout</a></li>
+            <li class="quick-shake"><a href="RATBALLS.html">epic RAT RECIPE!!!11</a></li>
+            <li class="quick-shake"><a href="ratcup.html">RATS. JUST A CLICK AWAY</a></li>
+        </ul>
+    </nav>
+</header>
+<h3>Select a rat song to play.</h3>
+
+<div id="playlist">
+    <div class="song" onclick="playSong('Rat Symphony', 'Classical', 'ratdance.mp3')">
+        <h2>Rat Symphony</h2>
+        <p>Genre: Classical</p>
+    </div>
+    <div class="song" onclick="playSong('Funky Rat Groove', 'Funk', 'ratverb.mp3')">
+        <h2>Funky Rat Groove</h2>
+        <p>Genre: Funk</p>
+    </div>
+    <div class="song" onclick="playSong('Rat Rock Anthem', 'Rock', 'pepis.mp3')">
+        <h2>Rat Rock Anthem</h2>
+        <p>Genre: Rock</p>
+    </div>
+    <!-- Add more songs as needed -->
+    <audio id="audio" controls>
+        Your browser does not support the audio element.
+    </audio>
+</div>
+<script>
+    function playSong(title, genre, audioSrc) {
+        const audio = document.getElementById('audio');
+        const titleElement = document.querySelector('h3');
+        titleElement.textContent = `Now Playing: ${title} - ${genre}`;
+        audio.src = audioSrc;
+        audio.play();
+    }
+</script>
+</body>
+</html>
