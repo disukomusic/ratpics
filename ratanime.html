@@ -1,0 +1,157 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>crunchyrat</title>
+    <style>
+        .stars {
+            display: inline-block;
+            font-size: 30px;
+        }
+        .stars input {
+            display: none;
+        }
+        .stars label {
+            float: right;
+            color: #ccc;
+            margin: 0.1em;
+            cursor: pointer;
+        }
+        .stars label:before {
+            content: '★';
+        }
+        .stars input:checked ~ label {
+            color: #ffc700;
+        }
+
+        #funny-rat, #burp-rat {
+            position: absolute;
+            display: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 2s;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>RAT PICS THAT GO HARD!!!!</h1>
+    <nav>
+        <ul>
+            <li class="quick-shake"><a href="index.html">Home</a></li>
+            <li class="quick-shake"><a href="blog.html">rats</a></li>
+            <li class="quick-shake"><a href="ratvideo.html">rats?!?/11</a></li>
+            <li class="quick-shake"><a href="ratfly.html">they put me in a rubber room</a></li>
+            <li class="quick-shake"><a href="hangout.html">super awesome rat hangout</a></li>
+            <li class="quick-shake"><a href="RATBALLS.html">epic RAT RECIPE!!!11</a></li>
+            <li class="quick-shake"><a href="ratcup.html">RATS. JUST A CLICK AWAY</a></li>
+            <li class="quick-shake"><a href="ratmongus.html">rat game for kids</a></li>
+        </ul>
+    </nav>
+</header>
+<img id="funny-rat" src="funnyrat.png" alt="Funny Rat" width="600" height="600">
+<img id="burp-rat" src="ratburp.gif" alt="Burping Rat" width="600" height="600">
+
+<h2>video streaming provided by crunchyrat</h2>
+<video width="720" height="480" controls>
+    <source src="rat anime.mp4" type="video/mp4">
+    eat shit you dumb bitch!!
+</video>
+<br>
+
+<p>rate 5 stars or i will kill you with my bare hands.</p>
+<div class="stars">
+    <input type="radio" name="rating" id="star5" value="5">
+    <label for="star5"></label>
+    <input type="radio" name="rating" id="star4" value="4">
+    <label for="star4"></label>
+    <input type="radio" name="rating" id="star3" value="3">
+    <label for="star3"></label>
+    <input type="radio" name="rating" id="star2" value="2">
+    <label for="star2"></label>
+    <input type="radio" name="rating" id="star1" value="1">
+    <label for="star1"></label>
+</div>
+
+
+<audio id="rat-sound">
+    <source src="rathorn.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<audio id="burp-sound">
+    <source src="ratburp.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<footer>
+    <p>&copy; 2023 rats . All rats reserved.</p>
+</footer>
+<script>
+    const stars = document.querySelectorAll('.stars input');
+    const funnyRat = document.getElementById('funny-rat');
+    const burpRat = document.getElementById('burp-rat');
+    const ratSound = document.getElementById('rat-sound');
+    const burpSound = document.getElementById('burp-sound');
+
+    // Function to hide rat image when audio ends
+    function hideRatOnAudioEnd(audio, rat) {
+        audio.addEventListener('ended', () => {
+            rat.style.display = 'none';
+            rat.classList.remove('quick-shake');
+        });
+    }
+
+    // Hide rats initially
+    funnyRat.style.display = 'none';
+    burpRat.style.display = 'none';
+
+    // Hide rats when audio ends
+    hideRatOnAudioEnd(ratSound, funnyRat);
+    hideRatOnAudioEnd(burpSound, burpRat);
+
+    stars.forEach((star) => {
+        star.addEventListener('change', (e) => {
+            if (e.target.value === '5') {
+                funnyRat.style.display = 'block';
+                funnyRat.style.bottom = '0';
+                funnyRat.style.right = '0';
+                funnyRat.classList.add('quick-shake'); // Adding a class to make it shake
+                ratSound.play();
+
+                // Hide the burping rat and stop the burp sound if it's currently displayed
+                burpRat.style.display = 'none';
+                burpSound.pause();
+                burpSound.currentTime = 0;
+            } else if (e.target.value === '1') {
+                burpRat.style.display = 'block';
+                burpRat.style.bottom = '0';
+                burpRat.style.right = '0';
+                burpRat.classList.add('quick-shake'); // Adding a class to make it shake
+                burpSound.play();
+
+                // Hide the funny rat and stop the horn sound if it's currently displayed
+                funnyRat.style.display = 'none';
+                funnyRat.classList.remove('quick-shake');
+                ratSound.pause();
+                ratSound.currentTime = 0;
+            } else {
+                funnyRat.style.display = 'none';
+                funnyRat.classList.remove('quick-shake');
+                ratSound.pause();
+                ratSound.currentTime = 0;
+
+                burpRat.style.display = 'none';
+                burpRat.classList.remove('quick-shake');
+                burpSound.pause();
+                burpSound.currentTime = 0;
+            }
+        });
+    });
+</script>
+</body>
+</html>
