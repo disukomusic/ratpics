@@ -34,6 +34,8 @@
         <h2>Welcome to rat!</h2>
         <p>Discover the fascinating world of rat</p>
         <a href="suck balls.html" class="btn">suck balls</a>
+        <a href="about.html" class="btn">WE ARE THE RATS</a>
+
     </section>
 
     <section class="gallery">
@@ -56,13 +58,50 @@
 			<img src="https://img.cloudimgs.net/rx/1000x1250,q_90,ofmt_webp/s4/l_p:3105952:7d1c3bf281e373b1/fl_cutter,fl_layer_apply/u_p:3105952:f1c6cd79d9b72d3a/co_rgb:009445,e_colorize:100/fl_layer_apply/l_p:3105952:662974_sh/fl_layer_apply/u_p:3105952:184d580923f94160/fl_layer_apply/c_thumb,w_1280/f_jpg/v1/p/83266389/a58c33d579f29e835b3ed62a67c435ab/t/a460878cb1edcf31.jpg" alt="rat shirt">
             <!-- Add more images here -->
         </div>
-				<a href="about.html" class="btn">WE ARE THE RATS</a>
+        <a href="https://rat.pics"><img src="RatPicsBadge.gif"/></a>
+
+        <br>
+        <button id="copyButton" onclick="copyToClipboard()" class="btn" >add ratpics to your site!</button>
+
+        <!-- Code to be copied -->
+        <pre id="codeToCopy">&lt;a href="https://rat.pics"&gt;&lt;img src="https://rat.pics/RatPicsBadge.gif"/&gt;&lt;/a&gt;</pre>
+
+        <script>
+            function copyToClipboard() {
+                var codeToCopy = document.getElementById("codeToCopy").innerText;
+
+                // Create a textarea element to hold the code temporarily
+                var tempTextArea = document.createElement("textarea");
+                tempTextArea.value = codeToCopy;
+                document.body.appendChild(tempTextArea);
+
+                // Select the text in the textarea
+                tempTextArea.select();
+                tempTextArea.setSelectionRange(0, 99999); /*For mobile devices*/
+
+                // Copy the selected text
+                document.execCommand("copy");
+
+                // Remove the textarea element
+                document.body.removeChild(tempTextArea);
+
+                // Change button text temporarily to indicate copying
+                var copyButton = document.getElementById("copyButton");
+                copyButton.innerText = "embed copied!!!!!";
+                setTimeout(function() {
+                    copyButton.innerText = "add ratpics to your site!";
+                }, 1500);
+            }
+        </script>
+        
+        
+        </p>
 
     </section>
 </main>
 
 <footer>
-    <p>&copy; 2023 rats . All rats reserved.</p>
+    <p>&copy; 2024 rats . All rats reserved.</p>
 </footer>
 </body>
 </html>
