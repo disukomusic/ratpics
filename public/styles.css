@@ -150,10 +150,7 @@ body {
 }
 
 
-* {
-    cursor: url('https://rat.pics/ratsursor.gif'),
-    auto !important;
-}
+
 
 .tooltip {
   position: absolute;

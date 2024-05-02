@@ -293,3 +293,8 @@ img:hover {
 #chat-input {
     flex: 1;
 }
+
+* {
+    cursor: url('https://rat.pics/ratsursor.gif'),
+    auto !important;
+}
