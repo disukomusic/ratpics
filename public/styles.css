@@ -94,6 +94,7 @@ main {
 
 .btn:hover {
     background-color: #ffcc66;
+    cursor: url('ratcursor.gif'), auto; /* Custom cursor */
 }
 
 .gallery {
