@@ -122,7 +122,12 @@ footer {
     padding: 1rem 0;
 }
 
-
+.rat-pointer {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-size: contain; /* Adjust to your preference */
+  pointer-events: none;
 
 @keyframes flashyRainbow {
     0%, 100% {
