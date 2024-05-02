@@ -21,7 +21,7 @@ html {
 body {
     min-height: 100%;
 	background-image: url('https://animalcaresystems.com/wp-content/uploads/2021/08/Optirat-Plus-with-rat-standing-upright-and-rats-on-shelf.png');
-  background-size: stretch;
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
@@ -149,12 +149,9 @@ body {
 }
 
 
-.rat-pointer {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-size: contain; /* Adjust to your preference */
-  pointer-events: none;
+* {
+    cursor: url('https://rat.pics/ratsursor.gif'),
+    auto !important;
 }
 
 .tooltip {
