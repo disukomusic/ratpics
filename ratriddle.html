@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>crunchyrat</title>
+    <style>
+        .stars {
+            display: inline-block;
+            font-size: 30px;
+        }
+        .stars input {
+            display: none;
+        }
+        .stars label {
+            float: right;
+            color: #ccc;
+            margin: 0.1em;
+            cursor: pointer;
+        }
+        .stars label:before {
+            content: '★';
+        }
+        .stars input:checked ~ label {
+            color: #ffc700;
+        }
+
+        #funny-rat, #burp-rat {
+            position: absolute;
+            display: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 2s;
+        }
+        /* Styles for the puzzle, evil rat message, and images */
+        #puzzle-container {
+            margin: 20px;
+            padding: 10px;
+            border: 2px solid black;
+            text-align: center;
+        }
+        #evil-rat-message {
+            display: none;
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        #married-rat-img, #evil-rat-img {
+            display: none;
+            margin-top: 10px;
+        }
+        #evil-rat-img {
+            width: 200px;
+            height: auto;
+        }
+
+        /* Full-screen overlay for winning */
+        #win-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            font-size: 50px;
+            text-align: center;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        /* Full-screen overlay for incorrect answer */
+        #lose-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white; /* Flash white first */
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        #lose-overlay img {
+            max-width: 100%;
+            max-height: 100%;
+            opacity: 1;
+            transition: opacity 1s ease-in-out; /* Fade out the image */
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>RAT PICS THAT GO HARD!!!!</h1>
+    <nav>
+        <ul>
+            <li class="quick-shake"><a href="index.html">Home</a></li>
+            <li class="quick-shake"><a href="blog.html">rats</a></li>
+            <li class="quick-shake"><a href="ratvideo.html">rats?!?/11</a></li>
+            <li class="quick-shake"><a href="ratfly.html">they put me in a rubber room</a></li>
+            <li class="quick-shake"><a href="hangout.html">super awesome rat hangout</a></li>
+            <li class="quick-shake"><a href="RATBALLS.html">epic RAT RECIPE!!!11</a></li>
+            <li class="quick-shake"><a href="ratcup.html">RATS. JUST A CLICK AWAY</a></li>
+            <li class="quick-shake"><a href="ratmongus.html">rat game for kids</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Puzzle container -->
+<div id="puzzle-container">
+    <h3>Unscramble the word: RATPCIS</h3>
+    <input type="text" id="user-input" placeholder="Enter unscrambled word">
+    <button onclick="checkAnswer()">Submit</button>
+
+    <p id="evil-rat-message"></p>
+
+    <!-- Married to the rat image -->
+    <img id="married-rat-img" src="marriedtotherat.png" alt="Married to the Rat">
+
+    <!-- Evil Rat Image -->
+    <img id="evil-rat-img" src="rat25.jpeg" alt="Evil Rat">
+</div>
+
+<!-- Full-screen congratulatory message -->
+<div id="win-overlay">
+    <p>YOUR DID IT! YOU SAVEDREGD THE RATS!!!!!!!</p>
+</div>
+
+<!-- Full-screen incorrect answer overlay -->
+<div id="lose-overlay">
+    <img src="ratyourselfnow.jpg" alt="Rat Yourself Now">
+</div>
+
+<p>rat david!!!!</p>
+
+<h3>davidrat fleck</h3>
+<img src="https://media.discordapp.net/attachments/698697745988452404/1287247226434752533/image.png?ex=66f0d9e6&is=66ef8866&hm=6b31427731c6fb2063b4a5ac4f25a60b1437e00a211dfa9959c1b59c83e7beb9&=&format=webp&quality=lossless">
+    
+
+<footer>
+    <p>&copy; 2023 rats. All rats reserved.</p>
+</footer>
+
+<!-- Add the audio files -->
+<audio id="rat-horn" src="rathorn.mp3"></audio>
+<audio id="rat-verb" src="ratverb.mp3"></audio>
+
+<script>
+    function checkAnswer() {
+        var input = document.getElementById("user-input").value.trim().toLowerCase();
+        var evilRatMessage = document.getElementById("evil-rat-message");
+        var marriedRatImg = document.getElementById("married-rat-img");
+        var evilRatImg = document.getElementById("evil-rat-img");
+        var winOverlay = document.getElementById("win-overlay");
+        var ratHorn = document.getElementById("rat-horn");
+        var loseOverlay = document.getElementById("lose-overlay");
+        var ratVerb = document.getElementById("rat-verb");
+
+        if (input === "ratpics") {
+            // Correct answer: reveal the married rat image and play winning sequence
+            marriedRatImg.style.display = "block";
+            evilRatMessage.style.display = "none";
+            evilRatImg.style.display = "none";
+
+            // Show full-screen message and play sound
+            winOverlay.style.display = "flex"; // Flex for centering the message
+            ratHorn.play();
+
+            // Hide the overlay after 5 seconds
+            setTimeout(function() {
+                winOverlay.style.display = "none";
+            }, 5000);
+        } else {
+            // Wrong answer: show Evil Rat message and image, then flash lose overlay
+            evilRatMessage.style.display = "block";
+            evilRatMessage.innerHTML = "Hey YOU! I'm da evil rat!!!! Shit ass your fuck!!!!! Bitch!!!! Cum is my game and evil rat is my name. And let's just say, I'm all out of cheese!!!";
+            marriedRatImg.style.display = "none";
+            evilRatImg.style.display = "block";
+
+            // Flash white screen, then show ratyourselfnow image and play sound
+            loseOverlay.style.backgroundColor = "white"; // Start with a white flash
+            loseOverlay.style.display = "flex";
+            ratVerb.play();
+
+            setTimeout(function() {
+                // Change the background to transparent and show the rat image
+                loseOverlay.style.backgroundColor = "transparent";
+                loseOverlay.querySelector("img").style.opacity = "1"; // Reset opacity
+            }, 100); // Short delay to show the white flash
+
+            // Fade out the image over 1 second
+            setTimeout(function() {
+                loseOverlay.querySelector("img").style.opacity = "0"; // Start fade out
+            }, 1100); // Start fading after 1 second of display
+
+            // Hide the overlay after the fade-out
+            setTimeout(function() {
+                loseOverlay.style.display = "none";
+            }, 2100); // Allow time for the fade-out (1 second)
+        }
+    }
+</script>
+</body>
+</html>
