@@ -1,0 +1,289 @@
+/* RESET BUT ANGRY */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    filter: hue-rotate(0deg);
+}
+
+/* FAKE POPUP STYLING */
+.fake-popup {
+    position: fixed;
+    width: 250px;
+    background: #c0c0c0;
+    border: 2px solid #000;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.5);
+    z-index: 9999;
+    font-family: 'Courier New', monospace;
+    animation: popupShake 0.1s infinite;
+}
+
+.popup-header {
+    background: darkblue;
+    color: white;
+    padding: 2px 5px;
+    display: flex;
+    justify-content: space-between;
+    cursor: move;
+}
+
+.popup-body {
+    padding: 15px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+.fake-popup img {
+    filter: contrast(150%) brightness(1.2) sepia(0.5);
+    image-rendering: pixelated; /* Makes them look low-res and "malicious" */
+}
+
+.fake-popup {
+    animation: popupFlash 0.2s infinite;
+}
+
+@keyframes popupFlash {
+    0% { border-color: red; }
+    50% { border-color: yellow; }
+    100% { border-color: lime; }
+}
+
+/* THE MOUSE TRAIL */
+.rat-trail {
+    position: absolute;
+    pointer-events: none;
+    font-size: 24px;
+    z-index: 10000;
+    animation: ratFly 1s forwards;
+}
+
+/* SCREEN GLITCH EFFECT */
+body::before {
+    content: "SYSTEM COMPROMISED";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1) 1px, transparent 1px, transparent 2px);
+    z-index: 9998;
+    color: rgba(255, 0, 0, 0.05);
+    font-size: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+/* ANIMATIONS */
+@keyframes popupShake {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(2px, 2px); }
+    100% { transform: translate(-2px, -2px); }
+}
+
+@keyframes ratFly {
+    to { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+/* OVERRIDE OVERFLOW TO ALLOW POPUPS */
+body {
+    overflow-x: hidden !important;
+}
+
+/* HTML IS SUSPICIOUS */
+html {
+    height: 100%;
+    background: repeating-linear-gradient(
+            45deg,
+            #ff00ff,
+            #ff00ff 10px,
+            #00ffcc 10px,
+            #00ffcc 20px
+    );
+}
+
+/* BODY FIGHT CLUB */
+body {
+    min-height: 100%;
+    font-family: "Comic Sans MS", "Papyrus", cursive, system-ui;
+    background-image:
+            url("https://animalcaresystems.com/wp-content/uploads/2021/08/Optirat-Plus-with-rat-standing-upright-and-rats-on-shelf.png"),
+            url("https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg");
+    background-blend-mode: difference;
+    background-size: cover, 200px 200px;
+    background-attachment: fixed, scroll;
+    text-align: center;
+    overflow: hidden;
+    animation: bodyFreakout 2.5s infinite linear;
+    cursor: url("ratcursor.gif"), crosshair;
+}
+
+/* BODY OVERRIDES ITSELF (ON PURPOSE) */
+body {
+    background-color: #ffcc66;
+    animation: bodyFreakout 1.2s infinite steps(2);
+}
+
+/* HEADER BUT WRONG */
+header {
+    background: linear-gradient(90deg, #663399, hotpink, lime);
+    color: #ffcc66;
+    padding: 1rem;
+    text-shadow: 2px 2px black, -2px -2px red;
+    transform: skewX(-2deg);
+}
+
+/* NAV MELTDOWN */
+nav ul {
+    list-style: "🐀 ";
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.2rem;
+}
+
+nav li {
+    display: inline-block;
+    transform: rotate(calc(var(--spin, 0deg)));
+}
+
+nav a {
+    color: cyan;
+    text-decoration: underline dotted;
+    font-size: clamp(10px, 3vw, 22px);
+    background: rgba(0,0,0,0.3);
+    padding: 4px;
+    animation: navWiggle 0.3s infinite alternate;
+}
+
+nav a:hover {
+    color: red;
+    background: yellow;
+    filter: blur(1px);
+}
+
+/* MAIN IS CONFUSED */
+main {
+    padding: 2rem;
+    transform: rotate(0.2deg);
+}
+
+/* INTRO BUT POSSESSED */
+.intro {
+    margin-bottom: 2rem;
+    animation: textShiver 0.15s infinite;
+}
+
+/* BUTTONS ARE A LIE */
+.btn {
+    display: inline-block;
+    background-image: url("rat1.png");
+    background-size: cover;
+    color: transparent;
+    width: 140px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px dashed magenta;
+    cursor: pointer;
+    animation: btnPulse 1s infinite;
+}
+
+.btn::after {
+    content: "CLICK??";
+    color: lime;
+    position: relative;
+    top: 18px;
+    font-size: 12px;
+    text-shadow: 0 0 5px black;
+}
+
+/* GALLERY BUT WRONG DIMENSION */
+.gallery {
+    filter: saturate(300%) contrast(200%);
+}
+
+/* GRID BUT CHAOTIC */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 3px;
+    transform: rotate(-0.7deg);
+}
+
+.image-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid red;
+    animation: imageJitter 0.08s infinite;
+}
+
+/* FOOTER BUT HAUNTED */
+footer {
+    background: black;
+    color: white;
+    font-size: 10px;
+    animation: footerBlink 0.5s infinite;
+}
+
+/* TOOLTIP EXISTS FOR NO REASON */
+.tooltip {
+    position: fixed;
+    bottom: 2px;
+    left: 2px;
+    background: rgba(255,0,0,0.8);
+    color: white;
+    padding: 3px;
+    font-size: 9px;
+}
+
+/* RAT POINTER (BROKEN ON PURPOSE) */
+.rat-pointer {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+    background: url("rat2.png") no-repeat center/contain;
+    animation: spinForever 3s infinite linear;
+}
+
+/* ANIMATIONS FROM HELL */
+
+@keyframes bodyFreakout {
+    0% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(180deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes navWiggle {
+    from { transform: translateY(0px) rotate(-1deg); }
+    to { transform: translateY(2px) rotate(1deg); }
+}
+
+@keyframes textShiver {
+    0% { letter-spacing: 0px; }
+    50% { letter-spacing: 2px; }
+    100% { letter-spacing: -1px; }
+}
+
+@keyframes btnPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1) rotate(3deg); }
+    100% { transform: scale(1); }
+}
+
+@keyframes imageJitter {
+    from { transform: translate(0,0); }
+    to { transform: translate(1px,-1px); }
+}
+
+@keyframes footerBlink {
+    0%, 100% { opacity: 0.25; }
+    50% { opacity: 0.1; }
+}
+
+@keyframes spinForever {
+    to { transform: rotate(360deg); }
+}
